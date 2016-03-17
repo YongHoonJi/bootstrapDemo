@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+	<property scope="context" name="logfolder" value="C:/logs/web_template" />
     <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
     <appender name="FILE_INFO" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
         <!-- "application-name" is a variable --> 
-        <File>/Users/Justin/Documents/logs/web_template/info/${bySecond}.log</File>
+        <File>${logfolder}/info/${bySecond}.log/info/${bySecond}.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>/Users/Justin/Documents/logs/web_template/info/web_template-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${logfolder}/info/${bySecond}.log/info/web_template-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->
                 <maxFileSize>50MB</maxFileSize>
@@ -25,10 +26,10 @@
     </appender>
 	<appender name="FILE_DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
         <!-- "application-name" is a variable --> 
-        <File>/Users/Justin/Documents/logs/web_template/debug/${bySecond}.log</File>
+        <File>${logfolder}/info/${bySecond}.log/debug/${bySecond}.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>/Users/Justin/Documents/logs/web_template/debug/web_template-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${logfolder}/info/${bySecond}.log/debug/web_template-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->
                 <maxFileSize>50MB</maxFileSize>
@@ -49,10 +50,10 @@
     </appender>
     <appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender"> 
         <!-- "application-name" is a variable --> 
-        <File>/Users/Justin/Documents/logs/web_template/error/${bySecond}.log</File>
+        <File>${logfolder}/info/${bySecond}.log/error/${bySecond}.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>/Users/Justin/Documents/logs/web_template/error/RISK_SIM-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <fileNamePattern>${logfolder}/info/${bySecond}.log/error/RISK_SIM-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <!-- or whenever the file size reaches 100MB -->
                 <maxFileSize>50MB</maxFileSize>
